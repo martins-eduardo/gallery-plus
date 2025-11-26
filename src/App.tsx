@@ -6,11 +6,18 @@ import Alert from './components/alert'
 import Badge from './components/badge'
 import Button from './components/button'
 import ButtonIcon from './components/button-icon'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from './components/dialog'
 import Divider from './components/divider'
 import ImageFilePreview from './components/image-file-preview'
 import InputCheckbox from './components/input-checkbox'
 import InputSingleFile from './components/input-single-file'
 import InputText from './components/input-text'
+import Text from './components/text'
 
 export default function App() {
   const form = useForm()
@@ -73,6 +80,16 @@ export default function App() {
           {...form.register('file')}
           replaceBy={<ImageFilePreview src={fileSource} alt="Imagem" />}
         />
+      </div>
+      <div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button>Abrir Modal</Button>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>Teste Dialog</DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   )
