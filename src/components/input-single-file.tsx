@@ -36,6 +36,7 @@ interface InputSingleFileProps
   form: any
   allowedExtensions: string[]
   maxFileSizeInMB: number
+  replaceBy: React.ReactNode
   error?: React.ReactNode
 }
 
@@ -45,6 +46,7 @@ export default function InputSingleFile({
   error,
   allowedExtensions,
   maxFileSizeInMB,
+  replaceBy,
   ...props
 }: InputSingleFileProps) {
   const formValues = useWatch({ control: form.control })
@@ -75,72 +77,75 @@ export default function InputSingleFile({
   }
 
   return (
-    <div>
-      {!formFile || !isValidFile() ? (
-        <>
-          <div className="w-full relative group cursor-pointer">
-            <input
-              type="file"
-              className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer"
-              {...props}
-            />
-            <div className={inputSingleFileVariants({ size })}>
-              <Icon
-                svg={UploadFileIcon}
-                className={inputSingleFilIconVariants({ size })}
+    <>
+      <div>{replaceBy}</div>
+      <div>
+        {!formFile || !isValidFile() ? (
+          <>
+            <div className="w-full relative group cursor-pointer">
+              <input
+                type="file"
+                className="absolute top-0 right-0 w-full h-full opacity-0 cursor-pointer"
+                {...props}
               />
-              <Text
-                variant="label-medium"
-                className="text-placeholder text-center"
-              >
-                Arraste o arquivo aqui <br /> ou clique para selecionar
-              </Text>
+              <div className={inputSingleFileVariants({ size })}>
+                <Icon
+                  svg={UploadFileIcon}
+                  className={inputSingleFilIconVariants({ size })}
+                />
+                <Text
+                  variant="label-medium"
+                  className="text-placeholder text-center"
+                >
+                  Arraste o arquivo aqui <br /> ou clique para selecionar
+                </Text>
+              </div>
+            </div>
+            <div className="flex flex-col gap-1 mt-1">
+              {formFile && !isValidExtension() && (
+                <Text variant="label-small" className="text-accent-red">
+                  Tipo de arquivo inválido
+                </Text>
+              )}
+              {formFile && !isValidSize() && (
+                <Text variant="label-small" className="text-accent-red">
+                  Tamanho do arquivo ultrapassou 50MB
+                </Text>
+              )}
+              {error && (
+                <Text variant="label-small" className="text-accent-red">
+                  {error}
+                </Text>
+              )}
+            </div>
+          </>
+        ) : (
+          <div className="flex gap-3 items-center border border-solid border-border-primary mt-5 p-3 rounded">
+            <Icon svg={FileImageIcon} className="fill-white w-6 h-6" />
+            <div className="flex flex-col">
+              <div className="truncate max-w-80">
+                <Text variant="label-medium" className="text-placeholder">
+                  {formFile.name}
+                </Text>
+              </div>
+              <div className="flex">
+                <button
+                  type="button"
+                  className={textVariants({
+                    variant: 'label-medium',
+                    className: 'text-accent-red cursor-pointer hover:underline',
+                  })}
+                  onClick={() => {
+                    form.setValue(name, undefined)
+                  }}
+                >
+                  Remover
+                </button>
+              </div>
             </div>
           </div>
-          <div className="flex flex-col gap-1 mt-1">
-            {formFile && !isValidExtension() && (
-              <Text variant="label-small" className="text-accent-red">
-                Tipo de arquivo inválido
-              </Text>
-            )}
-            {formFile && !isValidSize() && (
-              <Text variant="label-small" className="text-accent-red">
-                Tamanho do arquivo ultrapassou 50MB
-              </Text>
-            )}
-            {error && (
-              <Text variant="label-small" className="text-accent-red">
-                {error}
-              </Text>
-            )}
-          </div>
-        </>
-      ) : (
-        <div className="flex gap-3 items-center border border-solid border-border-primary mt-5 p-3 rounded">
-          <Icon svg={FileImageIcon} className="fill-white w-6 h-6" />
-          <div className="flex flex-col">
-            <div className="truncate max-w-80">
-              <Text variant="label-medium" className="text-placeholder">
-                {formFile.name}
-              </Text>
-            </div>
-            <div className="flex">
-              <button
-                type="button"
-                className={textVariants({
-                  variant: 'label-medium',
-                  className: 'text-accent-red cursor-pointer hover:underline',
-                })}
-                onClick={() => {
-                  form.setValue(name, undefined)
-                }}
-              >
-                Remover
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   )
 }
