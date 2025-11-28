@@ -9,7 +9,7 @@ import Button from './../components/button'
 import ButtonIcon from './../components/button-icon'
 import { Dialog, DialogBody, DialogContent, DialogFooter, DialogHeader, DialogTrigger } from './../components/dialog'
 import Divider from './../components/divider'
-import ImageFilePreview from './../components/image-file-preview'
+import ImagePreview from './../components/image-preview'
 import InputCheckbox from './../components/input-checkbox'
 import InputSingleFile from './../components/input-single-file'
 import InputText from './../components/input-text'
@@ -74,7 +74,7 @@ export default function PageComponents() {
           allowedExtensions={['png', 'jpg', 'jpeg', 'webp']}
           maxFileSizeInMB={50}
           {...form.register('file')}
-          replaceBy={<ImageFilePreview src={fileSource} alt="Imagem" />}
+          replaceBy={<ImagePreview src={fileSource} alt="Imagem" />}
         />
       </div>
       <div>
@@ -93,7 +93,7 @@ export default function PageComponents() {
                 allowedExtensions={['png', 'jpg', 'jpeg', 'webp']}
                 maxFileSizeInMB={50}
                 {...form.register('file')}
-                replaceBy={<ImageFilePreview src={fileSource} alt="Imagem" />}
+                replaceBy={<ImagePreview src={fileSource} alt="Imagem" />}
               />
             </DialogBody>
             <DialogFooter>
