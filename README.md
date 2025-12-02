@@ -25,11 +25,9 @@ Aplicação web para gerenciamento de imagens, com backend e frontend separados.
 ```bash
 pnpm install
 
-Iniciar backend
 pnpm dev-server
 
-Iniciar frontend
 pnpm dev
+```
 
-Acessar no navegador
-http://localhost:5173/
+### Acessar no navegador
