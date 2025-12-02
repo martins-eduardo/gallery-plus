@@ -7,6 +7,7 @@ import ButtonIcon from '../../../components/button-icon'
 import Skeleton from '../../../components/skeleton'
 
 import cx from 'classnames'
+import Button from '../../../components/button'
 
 interface PhotosNavigatorProps extends React.ComponentProps<'div'> {
   previousPhotoId?: string
@@ -34,16 +35,16 @@ export default function PhotosNavigator({
               navigate(`/fotos/${previousPhotoId}`)
             }}
           />
-          <ButtonIcon
+          <Button
             icon={ArrowRightIcon}
             variant="secondary"
-            disabled={!previousPhotoId}
+            disabled={!nextPhotoId}
             onClick={() => {
               navigate(`/fotos/${nextPhotoId}`)
             }}
           >
             Próxima imagem
-          </ButtonIcon>
+          </Button>
         </>
       ) : (
         <>

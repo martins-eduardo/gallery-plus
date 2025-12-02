@@ -45,29 +45,16 @@ interface InputTextProps
   error?: React.ReactNode
 }
 
-export default function InputText({
-  size,
-  disabled,
-  className,
-  icon,
-  error,
-  ...props
-}: InputTextProps) {
+export default function InputText({ size, disabled, className, icon, error, ...props }: InputTextProps) {
   return (
     <div className={inputTextContainerVariants({ className })}>
       <div className={inputTextWrapperVariants({ size, disabled })}>
-        {icon && (
-          <Icon svg={icon} className={inputTextIconVariants({ size })} />
-        )}
-        <input
-          className={inputTextVariants()}
-          disabled={disabled as boolean}
-          {...props}
-        />
+        {icon && <Icon svg={icon} className={inputTextIconVariants({ size })} />}
+        <input className={inputTextVariants()} disabled={disabled as boolean} {...props} />
       </div>
       {error && (
         <Text variant="label-small" className="text-accent-red">
-          Um erro qualquer...
+          {error}
         </Text>
       )}
     </div>
