@@ -1,8 +1,10 @@
 # Gallery Plus
 
-Aplicação web para gerenciamento de imagens, com backend e frontend separados. O projeto oferece uma interface simples para visualizar e organizar galerias, além de uma API própria para lidar com uploads e armazenamento.
+Aplicação web moderna para gerenciamento de imagens, organizada em arquitetura separada entre frontend e backend. O projeto fornece uma interface rápida e responsiva para visualização, upload e organização de galerias, além de uma API dedicada para processamento e armazenamento.
 
-## 📌 Tecnologias
+---
+
+## 🚀 Tecnologias
 
 ### Frontend
 - React
@@ -14,10 +16,12 @@ Aplicação web para gerenciamento de imagens, com backend e frontend separados.
 - Express
 - TypeScript
 
-### Outros
+### Ferramentas e Configuração
 - pnpm
 - Biome
-- Configurações padrão do Vite
+- Estrutura otimizada com Vite
+
+---
 
 ## Como Rodar
 
