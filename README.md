@@ -24,10 +24,24 @@ Aplicação web para gerenciamento de imagens, com backend e frontend separados.
 ### Instalar dependências
 ```bash
 pnpm install
-
-pnpm dev-server
-
+```
+### Iniciar frontend
+```bash
 pnpm dev
 ```
-
+### Iniciar backend
+```bash
+pnpm dev-server
+```
 ### Acessar no navegador
+```bash
+http://localhost:5173/
+```
+
+## Contribuição
+```bash
+git fork
+git checkout -b minha-feature
+git commit -m "feat: minha contribuição"
+git push origin minha-feature
+```
