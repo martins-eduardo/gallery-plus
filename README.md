@@ -1,6 +1,6 @@
 # Gallery Plus
 
-Aplicação web moderna para gerenciamento de imagens, organizada em arquitetura separada entre frontend e backend. O projeto fornece uma interface rápida e responsiva para visualização, upload e organização de galerias, além de uma API dedicada para processamento e armazenamento.
+Aplicação web moderna para gerenciamento de imagens, desenvolvida durante o curso de React da Rocketseat. O projeto utiliza arquitetura separada entre frontend e backend, oferecendo uma interface rápida e responsiva para visualizar, enviar e organizar galerias, além de uma API dedicada para processamento e armazenamento.
 
 ---
 
@@ -23,26 +23,29 @@ Aplicação web moderna para gerenciamento de imagens, organizada em arquitetura
 
 ---
 
-## Como Rodar
+## 🛠️ Como Rodar o Projeto
 
-### Instalar dependências
+### 1. Instalar dependências
 ```bash
 pnpm install
 ```
-### Iniciar frontend
+### 2. Iniciar o frontend
 ```bash
 pnpm dev
 ```
-### Iniciar backend
+### 3. Iniciar o backend
 ```bash
 pnpm dev-server
 ```
-### Acessar no navegador
+### 4. Acessar no navegador
 ```bash
 http://localhost:5173/
 ```
+--- 
 
-## Contribuição
+## 🤝 Como Contribuir
+
+### Fluxo recomendado
 ```bash
 git fork
 git checkout -b minha-feature
