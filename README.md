@@ -16,7 +16,11 @@ Aplicação web para gerenciamento de imagens, com backend e frontend separados.
 
 ### Outros
 - pnpm
-- ESLint
+- Biome
 - Configurações padrão do Vite
 
-## 📁 Estrutura do Projeto
+## Como Rodar
+
+### Instalar dependências
+```bash
+pnpm install
