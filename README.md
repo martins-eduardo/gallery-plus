@@ -1,21 +1,22 @@
 # Gallery Plus
 
-## Getting started
+Aplicação web para gerenciamento de imagens, com backend e frontend separados. O projeto oferece uma interface simples para visualizar e organizar galerias, além de uma API própria para lidar com uploads e armazenamento.
 
-Run the install command
+## 📌 Tecnologias
 
-```
-pnpm install
-```
+### Frontend
+- React
+- TypeScript
+- Vite
 
-Then in a terminal run the backend server
+### Backend
+- Node.js
+- Express
+- TypeScript
 
-```
-pnpm dev-server
-```
+### Outros
+- pnpm
+- ESLint
+- Configurações padrão do Vite
 
-In another terminal run the frontend server
-
-```
-pnpm dev
-```
+## 📁 Estrutura do Projeto
